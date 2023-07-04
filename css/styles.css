@@ -12,6 +12,8 @@
   --modal-backgroung-color: #fcfcfc;
 }
 
+/* COMMON */
+
 body {
   color: var(--third-color);
   background-color: #ffffff;
@@ -167,6 +169,8 @@ img {
   position: absolute;
   margin-top: 19px;
   bottom: -1px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-list {
@@ -331,6 +335,8 @@ img {
   letter-spacing: 0.04em;
   background-color: var(--brand-color);
   color: #ffffff;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover,
@@ -422,12 +428,14 @@ img {
   text-align: center;
 }
 
-/* Social links */
+/* SOCIAL LINKS */
 .socials {
   display: flex;
   justify-content: center;
   gap: 24px;
   margin-top: 8px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socials-item {
@@ -435,7 +443,6 @@ img {
   height: 40px;
   border-radius: 50%;
   background-color: var(--brand-color);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socials-link {
@@ -446,6 +453,7 @@ img {
   height: 100%;
   background-color: var(--brand-color);
   border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .socials-item:hover,
@@ -494,7 +502,7 @@ img {
   color: var(--icon-customers-color);
 
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-link:hover,
@@ -505,6 +513,7 @@ img {
 
 .customers-icon {
   fill: currentColor;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-icon:hover,
@@ -540,7 +549,9 @@ img {
 }
 
 .portfolio-card {
+  display: block;
   width: calc((100% - 48px) / 3);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-link {
@@ -564,33 +575,29 @@ img {
 }
 
 /* OVERLAY */
-.overlay {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 32px 164px;
 
-  transform: translateY(100%);
-
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--brand-color, #4d5ae5);
-
-  transition: transform 400ms;
+.portfolio-item-box {
+  position: relative;
+  overflow: hidden;
 }
 
 .overlay-text {
   color: var(--second-background-color);
   font-size: 16px;
   line-height: 1.5;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.32px;
+
   position: absolute;
+  left: 0;
   top: 0;
   letter-spacing: 0.02em;
   color: var(--second-background-color);
   padding: 40px 32px;
+  overflow: auto;
   background-color: var(--brand-color);
 
   width: 100%;
@@ -650,9 +657,6 @@ img {
 
 /* BACKDROP */
 .backdrop {
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   background-color: var(--navyblue-modal, rgba(46, 47, 66, 0.4));
   width: 100%;
   height: 100%;
@@ -700,30 +704,31 @@ img {
   justify-content: center;
   align-items: center;
   position: absolute;
+
+  right: 24px;
+  top: 24px;
   width: 24px;
   height: 24px;
+  padding: 0;
+
   background-color: #e7e9fc;
   border: none;
-  padding: 0;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-button:hover,
 .modal-button:focus {
   background-color: var(--secondary-icons-color);
   border: none;
+  fill: #ffffff;
 }
 
 .modal-icon {
   width: 8px;
   height: 8px;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.modal-icon:hover,
-.modal-icon:focus {
-  fill: #ffffff;
 }
